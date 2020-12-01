@@ -9,9 +9,12 @@
 
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
-\title{ew401-fa2020-roboroach}
-\author{A. Pak and B. D. Pritchard\thanks{Authors are with the Department of Weapons, Robotics, and Control Engineering at the United States Naval Academy}}
-\date{September 2020}
+
+% Can we insert a "pre-title" that says EW401 Final Report?
+
+\title{The RoboRoach}
+\author{Midshipman 1/C Alexis Pak and Midshipman 1/C Brooklyn Pritchard\thanks{Authors are with the Department of Weapons, Robotics, and Control Engineering at the United States Naval Academy}}
+% HOW DO I INCLUDE CONTACT INFO?
 
 \begin{document}
 \maketitle
@@ -22,6 +25,19 @@
 
 \label{fig:logo}
 \end{figure}
+
+% INCLUDE AFTER THE FIGURE: 
+    %A Capstone Project Report Submitted to the Faculty of The Weapons, Robotics and Control Engineering Department
+    %United States Naval Academy, Annapolis, Maryland
+
+    %Course:  EW401
+    %Faculty Advisor: Asst Prof Dennis Evangelista
+    %Department Chair: Prof Brad Bishop
+
+    %date comes last
+    \date{September 2020}
+
+\tableofcontents
 
 \begin{abstract}
 \par Though our initial goal is to control the movements of a cockroach by creating a neural interface to stimulate it’s antennae, we also have a much broader goal for our project in the WRC department. Our problem statement is: To create a simple and repeatable lab that teaches students the process of scientific inquiry. It must fall under the maximum budget for a lab and teach some state of the art technique for studying organisms. Our four metrics for evaluating our project’s overall performance are simple, short, relevant, and convenient. The design that scored the highest in these metrics was the Build Your Own RoboRoach project. It earned a 2 in simple because though there are some givens with the lab, creating a RoboRoach requires some background knowledge in the major in topics like PWMS, duty cycles, computer vision and more. It earned a 1 in short because we estimated that it would take 5 lab sessions for a Midshipman to complete. It earned a 4 in relevant because it teaches students how to test and create a hypothesis. Lastly, it earned a 3 in convenience because we predicted that a professor could set up this lab within 1 hour.  Our RoboRoach will wear a PCB similar to the Backyard Brains backpack. Our backpack will consist of a TinyPico and a set of electrodes. The TinyPico contains all the individual components needed to execute the same tasks as the Backyard Brains backpack. The user will designate a direction via a game controller which will send the command via bluetooth signal to the backpack, which then sends a current to a specific electrode (left or right) and that electrical stimulation causes the roach to turn left or right. We plan on using Windows as our computing platform with Python and Arduino IDE as our programming languages. After meeting with TSD, we created a comprehensive parts list and determined which items to order and which were already available in-house. After crafting our budget, we estimated a total of \$14,040 for labor, \$14,040 for overhead, and \$614.24 for parts. 
@@ -191,6 +207,9 @@ In short, the robot prosthetic hand taps into nerve signals in the arm to allow 
 
 \section{Ethical Considerations}
 \par Through the Backyard Brains site, we have done plenty of research on the ethical considerations for this project. Prior to performing any surgical tasks on the cockroaches, we will ensure that they are properly anesthetized. This will occur by submerging the cockroach in ice water causing them to go into a state of Hypothermia. This occurs due to the fact that cockroaches are ectothermic animals, meaning they do not produce their own heat. In this case, Hypothermia brings along a slow,light anesthesia, that causes reduced motion in the cockroach along with a diminished sensitivity of the nerves. Besides snipping the antennae in order to put the electrodes in ,little to no more invasive procedures will need to be performed on the cockroaches. We may possibly have to sand down the Pronotum of the cockroach to place the electrode connectors on it. Overall we guarantee that our cockroaches will be treated humanely during our experimentation.
+
+\bigskip
+
 \par This experiment also has the ability to greatly benefit future  Biomechanics studies . If we are able to fine tune the movements of the cockroach, and implement computer vision, the results of this experiment could be applied for things like reconnaissance missions in the U.S. Military. The learning outcomes could also be used in many different concentrations, including practicing controlling robots and having them execute certain tasks. 
 
 \section{Engineering Standards and Specifications}
@@ -217,7 +236,13 @@ In short, the robot prosthetic hand taps into nerve signals in the arm to allow 
 
 \subsection{Parts list and Budget}
 As you can see from the parts list , we have a very wide array of parts needed for our project. To simplify the organization of our parts, we split them into 3 sections. The sections are Roach stuff, Make your own electrode set, and PCB backpack. The Roach stuff portion contains any parts that relate to the cockroaches specifically. This section ranges from the actual cockroaches themselves all the way to the mist bottle needed to keep the humidity in the terrarium at the proper level for the cockroaches to survive.
+
+\bigskip
+
 \par The next section is filled with everything needed to make the electrode sets that we will attach to the backpack and insert into the antennae of the cockroaches to create a neural interface. The last section includes everything needed for our printed circuit board backpack. The main component of this backpack will be the TinyPico, the microcontroller we will be using for this project. Other components of this section include coin cell batteries, potentiometers, double sided tape and more. The total for the parts needed for our project is \$ 642.42. We also are aware that the  cost of materials for our project may increase by up to 25\% as we change the design of our project through trial and error.
+
+\bigskip
+
 \par The other components that we need to take into account for our budget of our project are the Labor Cost Estimate and the Overhead Cost Estimate.  Taking into account the hours put in and the hourly pay rate for the Midshipmen, Faculty, and Staff, our subtotal for the Labor Cost of our project is \$ 14,040. For the Overhead Cost Estimate, we took 3 things into account. We looked at the Fringe Benefits, Facilities, and General Services needed to successfully execute our experimentation. The subtotal for this section also came to \$ 14,040.
 
 \begin{figure}
@@ -240,6 +265,8 @@ As you can see from the parts list , we have a very wide array of parts needed f
 \caption{Mechanical drawing of system}
 \label{fig:mech}
 \end{figure}
+
+\bigskip
 
 \par In the figure below you can see the mechanical drawing for our system. The mechanical components of our system are highlighted in red. There are also red dotted arrows that shows the relation between each of the mechanical components. The user will input which direction it wants the cockroach to turn via an Iphone or Xbox controller. The next mechanical component of the system is the Tiny Pico itself. The Tiny Pico is roughly 18x32 millimeters and will most likely be soldered to the printed circuit board by the company we choose to manufacture the board. The PCB backpack will roughly be 25x48mm and will be mounted on the insect using heavy duty double sided tape. The use of the double sided tape is for ease of removal whenever we decide to remove the backpack from a cockroach's back. Next you have the electrodes which are stuck directly into each antennae of the cockroach. The last mechanical component of our system is the cockroach itself, which will be wearing the PCB on it's back and will be responding to the electrical stimulation given to it via the electrodes that are stuck in it's antennae. 
 
@@ -285,7 +312,7 @@ As you can see from the parts list , we have a very wide array of parts needed f
 \section{Proposed Work}
 
 \subsection{Work Breakdown Structure}
-Looking at the functional block diagram for our system, the workload can be divided into three categories. The first of which is any work regarded the Programming for the Tiny Pico micro controller. The second will be anything relating to the PCB. Lastly, anything related to the cockroaches will need to be taken care of as well. Each of these will be broken down further to ensure that we have reachable goals and timelines for our project. In terms of the cockroaches, we need to construct, test, and debug the electrodes. This is an integral part of the project so it should be done early on to ensure execution of the rest of the project. Brooklyn will be charge of working with the construction and testing of the Electrodes.after construction is complete, Brooklyn will test the electrodes with an O-scope. Alexis will be in charge of the computer vision portion of the project, hoping to use camera tracking technology on the cockroaches. In terms of the Tiny Pico, we will write a program that will send a current to the electrodes based off of the users input. The Backyard Brains code will be available as a guide for us while we construct our code, but we are hoping to fine tune their project and will do this partially by being open to construct the code differently than theirs. This will take a large amount of testing, debugging, and documenting as we may run into differences with reactions between different cockroaches. The PCB will be a principal portion of our project. Due to the fact that we are making our own "backpack" as opposed to using the one given in the Backyard Brains RoboRoach kit, this portion of the project will be lengthy. Alexis will begin the PCB portion of our project by making a prototype on the program Eagle. This prototype will be reviewed by TSD and our capstone advisor prior to any ordering. Simultaneously, Brooklyn will be researching companies that print custom circuit boards. The decision for the PCB to be made out of house is due to the desire to have a multi-layered circuit board which cannot be easily made by TSD. Once the PCB has arrived, it will be tested to ensure it is fully working and ready to be fully implemented into the project. The care taking of the cockroaches will be split equally between Alexis and Brooklyn, as will any small tasks that come up and the final report writing.  
+Looking at the functional block diagram for our system, the workload can be divided into three categories. The first of which is any work regarded the Programming for the TinyPico micro controller. The second will be anything relating to the PCB. Lastly, anything related to the cockroaches will need to be taken care of as well. Each of these will be broken down further to ensure that we have reachable goals and timelines for our project. In terms of the cockroaches, we need to construct, test, and debug the electrodes. This is an integral part of the project so it should be done early on to ensure execution of the rest of the project. Brooklyn will be charge of working with the construction and testing of the Electrodes.after construction is complete, Brooklyn will test the electrodes with an O-scope. Alexis will be in charge of the computer vision portion of the project, hoping to use camera tracking technology on the cockroaches. In terms of the TinyPico, we will write a program that will send a current to the electrodes based off of the users input. The Backyard Brains code will be available as a guide for us while we construct our code, but we are hoping to fine tune their project and will do this partially by being open to construct the code differently than theirs. This will take a large amount of testing, debugging, and documenting as we may run into differences with reactions between different cockroaches. The PCB will be a principal portion of our project. Due to the fact that we are making our own "backpack" as opposed to using the one given in the Backyard Brains RoboRoach kit, this portion of the project will be lengthy. Alexis will begin the PCB portion of our project by making a prototype on the program Eagle. This prototype will be reviewed by TSD and our capstone advisor prior to any ordering. Simultaneously, Brooklyn will be researching companies that print custom circuit boards. The decision for the PCB to be made out of house is due to the desire to have a multi-layered circuit board which cannot be easily made by TSD. Once the PCB has arrived, it will be tested to ensure it is fully working and ready to be fully implemented into the project. The care taking of the cockroaches will be split equally between Alexis and Brooklyn, as will any small tasks that come up and the final report writing.  
 
 \subsection{Timeline}
 \par Figure \ref{fig:timeline} displays the breakdown of the tasks our team needs to accomplish leading up to our final benchtop demonstration based on our WBS and general time estimates. Assuming we receive all of our ordered parts this semester and our design process goes smoothly, we should be finished creating our PCB before February and we would just have to wait for a company to send it to us.
@@ -299,9 +326,18 @@ Looking at the functional block diagram for our system, the workload can be divi
 
 \subsection{Risk Management}
 Our risks are separated into 3 categories: Technical, Business, and Programmatic. These 3 categories are designed to separate our risks by their nature.The technical category relates to things regarding technology, engineering, integration, and manufacturing.Programmatic risks relate to things regarding scheduling, staffing, communication, and estimates. Programmatic risks are all things that we can control and mitigate as a team. Lastly, Business risks are things regarding laws, resources, customers, and dependencies. These things cannot be controlled by our team. Delving into the first category, we found 2 risks that we deemed to be technical risks. 
+
+\bigskip
+
 \par The first technical risk relates to the design of our printed circuit board. We decided to use the program called Eagle to design our PCB prototype. Though Eagle is a widely used program for designing electrical schematics, we have never used it before. To mitigate getting behind due to the lack of experience with Eagle, we will familiarize ourselves with it as soon as possible and also reach out to TSD or other students who have prior experience with this program. With this mitigation in mind, we found this risk to be somewhat likely of occurring. The next technical risk is similar, regarding the fear of getting behind in our project due to unfamiliarity with our devices. We are using the Tiny Pico microprocessor for our project and are using python of the programming language for our coding. The unfamiliarity of both the device and the programming language may inhibit our ability to stay on schedule with the programming portion of our project. Though this is somewhat likely to happen, proper mitigation steps are taking place. Brooklyn is currently taking a python coding class, Embedded Microcontrollers, that will be applicable in terms of the coding for our project. Aside from this, Alexis will familiarize herself with the Tiny Pico schematics in order to ensure that once we receive the part, we are prepared to put it to use. 
+
+\bigskip
+
 \par We only have one programmatic risk- the total project budget. Though this is likely to fluctuate, it should be simple to re-evaluate each time we run into an obstacle with our project that causes us to order new parts. Because our capstone is a make-your-own version of a similar project, and is very dependent on the responses of the cockroaches to the electrical stimulation, there will be a large amount of trial and error taking place. It is likely that this causes us to order new parts, but the stress of this is mitigated by continuously checking the status of our project in order to ensure our budget does not change drastically. 
-/par The most risks we found for our project are Business related risks. Due to this, two of the risks are extremely similar- postal delays and PCB order delays. Both of these are somewhat likely to occur, especially due to the COVID-19 Pandemic. We are aware that suppliers are experiencing delays of very unknown lengths due to COVID-19. To mitigate this, we will order our PCB from the chosen company as soon as our prototype on Eagle is both finished and approved by our project advisor. In regards to all other postal delays, we will fill out all Purchase Cards as soon as possible to ensure that our parts have plenty of leeway in the time between arrival and when they are needed. Our last risk is of the greatest impact, the possibility of being in ROM or in the online classroom environment for Capstone due to COVID-19.Though this is only somewhat likely, it will be very consequential to the fashion in which or project is executed. In order to mitigate this from greatly impacting our Capstone, we will develop a plan for online completion of our project as well as plan for a 2 week quarantine upon return to the Naval Academy in January. We will also work to complete our homework tasks early in order to allow us to get as far ahead as possible on our project. Overall, all of these risks can be mitigated with proper planning, preperation, and hard work.
+
+\bigskip
+
+\par The most risks we found for our project are Business related risks. Due to this, two of the risks are extremely similar- postal delays and PCB order delays. Both of these are somewhat likely to occur, especially due to the COVID-19 Pandemic. We are aware that suppliers are experiencing delays of very unknown lengths due to COVID-19. To mitigate this, we will order our PCB from the chosen company as soon as our prototype on Eagle is both finished and approved by our project advisor. In regards to all other postal delays, we will fill out all Purchase Cards as soon as possible to ensure that our parts have plenty of leeway in the time between arrival and when they are needed. Our last risk is of the greatest impact, the possibility of being in ROM or in the online classroom environment for Capstone due to COVID-19.Though this is only somewhat likely, it will be very consequential to the fashion in which or project is executed. In order to mitigate this from greatly impacting our Capstone, we will develop a plan for online completion of our project as well as plan for a 2 week quarantine upon return to the Naval Academy in January. We will also work to complete our homework tasks early in order to allow us to get as far ahead as possible on our project. Overall, all of these risks can be mitigated with proper planning, preperation, and hard work.
 
 
 
@@ -313,7 +349,11 @@ Our risks are separated into 3 categories: Technical, Business, and Programmatic
 
 \par The simple metric will be evaluated by the ease at which we create code to achieve open loop control. If the code is easy enough to replicate from scratch with less than a 200 course level of knowledge, this lab would earn a 4. If the code is complicated and convoluted to the point where we cannot write it without our advisor's help, this lab would earn a 0. The short metric will be evaluated by how quickly we estimate the students will be able to code and achieve open loop directional control. If the code can be completed within a lab period, we estimate that the entire lab, including surgery, programming, observation, and testing, would take 4 lab periods or fewer. However, if the code is difficult to write and requires a deeper conceptual understanding than most 200 or 300 level courses, it will likely take 5 or 6 lab periods which would earn it anywhere between a 0 and 2. The relevant metric will be evaluated by the nature of the PCB and the code we write. If, when we have successfully created a working PCB, we believe that there is a solid balance between simplicity of preparation and sufficient unknowns, the lab would earn a 4. However, if we believe that there are either too few unknowns because of how much instruction is required to execute the lab, the lab would earn a 0 or 1. The convenient metric will be evaluated by how long it takes us to build an electrode set because the professor will need to build multiple. The PCBs can be ordered in bulk well before the execution of the lab, so the only preparation the professor should need to do is build the electrode sets, order the PCBs and cockroaches, and bring all the materials to the classroom. If it takes us less than 10 minutes to build one electrode set, it would earn a 4. If it takes us more than an hour to build one, it would likely earn a 0.
 
-
+\section{Benchtop Demonstration}
+\subsection{Activities}
+%Describe the activities you engaged in during the final weeks of the semester.
+\subsection{Results}
+%Present the results of your benchtop testing.
 
 \bibliographystyle{IEEEtran}
 \bibliography{roboroach.bib}
