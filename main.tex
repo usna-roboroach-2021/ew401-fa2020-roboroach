@@ -271,7 +271,7 @@ As you can see from the parts list , we have a very wide array of parts needed f
 \par In the figure below you can see the mechanical drawing for our system. The mechanical components of our system are highlighted in red. There are also red dotted arrows that shows the relation between each of the mechanical components. The user will input which direction it wants the cockroach to turn via an Iphone or Xbox controller. The next mechanical component of the system is the Tiny Pico itself. The Tiny Pico is roughly 18x32 millimeters and will most likely be soldered to the printed circuit board by the company we choose to manufacture the board. The PCB backpack will roughly be 25x48mm and will be mounted on the insect using heavy duty double sided tape. The use of the double sided tape is for ease of removal whenever we decide to remove the backpack from a cockroach's back. Next you have the electrodes which are stuck directly into each antennae of the cockroach. The last mechanical component of our system is the cockroach itself, which will be wearing the PCB on it's back and will be responding to the electrical stimulation given to it via the electrodes that are stuck in it's antennae. 
 
 \subsection{Circuit Diagrams}
-\par Figure \ref{fig:bbs} displays the schematic for the Backyard Brains PCB, which our design is based off of. Figure \ref{fig:tps} shows the schematic for our TinyPico-based PCB design. It can be observed from the schematics that the TinyPico contains most of the necessary parts from the Backyard Brains PCB, including a processor, PIC, and LED. With the TinyPico, we only need to add a digital potentiometer, a small coin cell battery, and a connection to the electrodes that will be implanted in the antennae. 
+\par Figure \ref{fig:bbs} displays the schematic for the Backyard Brains PCB, which our design is based off of. Figure \ref{fig:tps} shows the schematic for our TinyPico-based PCB design. It can be observed from the schematics that the TinyPico contains most of the necessary parts from the Backyard Brains PCB, including a processor, PIC, and LED. With the TinyPico, we only need to add a digital potentiometer, a small coin cell battery, and a connection to the electrodes that will be implanted in the antennae. The only difference in the battery circuit between the TinyPico and our design is that our design will be using a coin cell battery rather than a LiPo for power, as demonstrated in Figure \ref{fig:newbatt}.
 
 \begin{figure}[ht!]
 \centering
@@ -287,14 +287,37 @@ As you can see from the parts list , we have a very wide array of parts needed f
 \label{fig:tps}
 \end{figure}
 
-\subsection{Prototypes}
-\par Figure \ref{fig:prototype} shows a basic schematic for our PCB concept. The backpack itself depicted as a teal oval on the cockroaches back will be roughly 25x48mm in size. It will be mounted onto the cockroaches back with double sided tape. On the right side of figure \ref{fig:prototype}, you see that the components of the circuit board will mainly be the electrode base that will be connected to the electrodes implanted in the cockroaches antennae, and the Tiny Pico which will take care of any coding and power supply needs we have. We opted to keep the design fairly simple to give the students more time to focus on making a more accurate control system for their own RoboRoach. 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.5]{prototype.JPG}
-\caption{Basic Prototype for our PCB Backpack}
-\label{fig:prototype}
+\includegraphics[scale=0.4]{Newbattery.JPG}
+\caption{Our Design for a Battery Circuit}
+\label{fig:newbatt}
 \end{figure}
+
+\subsection{Prototypes}
+\par Figures \ref{fig:schematic}, \ref{fig:board}, and \ref{fig:3d} show demonstrate our prototype PCB concept. The backpack itself will be roughly 41x32mm in size. It will be mounted onto the cockroaches back with double sided tape. From the schematic, one can see that the components of the circuit board will mainly be the electrode base that will be connected to the electrodes implanted in the cockroaches antennae, the digital potentiometer that will regulate the curent being sent to the antennae, the battery circuit, and the TinyPico that will allow us to interface with the cockroach. We opted to keep the design fairly simple to give the students more time to focus on making a more accurate control system for their own RoboRoach. Although the 3D model looks plain right now, it will be silk screened with an aesthetically pleasing design once we have confirmed its functionality.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.35]{EESCHEMA.JPG}
+\caption{Prototype of PCB- Schematic View}
+\label{fig:schematic}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.5]{myboard.JPG}
+\caption{Prototype of PCB- Board View}
+\label{fig:board}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.5]{my3dmodel.JPG}
+\caption{Prototype of PCB- 3D Model View}
+\label{fig:3d}
+\end{figure}
+
 
 \subsection{Software Structure}
 \par Figure \ref{fig:pseudocode} displays the open loop pseudocode for our project. We plan for the user to stimulate the left antenna if he/she desires a right turn, and to stimulate the right antenna if he/she desires a left turn. If we achieve open loop control quickly, we will attempt to achieve closed loop control using computer vision, track the location of the cockroach, and compensate according to how much it is straying from the target location and in which direction.
@@ -350,10 +373,12 @@ Our risks are separated into 3 categories: Technical, Business, and Programmatic
 \par The simple metric will be evaluated by the ease at which we create code to achieve open loop control. If the code is easy enough to replicate from scratch with less than a 200 course level of knowledge, this lab would earn a 4. If the code is complicated and convoluted to the point where we cannot write it without our advisor's help, this lab would earn a 0. The short metric will be evaluated by how quickly we estimate the students will be able to code and achieve open loop directional control. If the code can be completed within a lab period, we estimate that the entire lab, including surgery, programming, observation, and testing, would take 4 lab periods or fewer. However, if the code is difficult to write and requires a deeper conceptual understanding than most 200 or 300 level courses, it will likely take 5 or 6 lab periods which would earn it anywhere between a 0 and 2. The relevant metric will be evaluated by the nature of the PCB and the code we write. If, when we have successfully created a working PCB, we believe that there is a solid balance between simplicity of preparation and sufficient unknowns, the lab would earn a 4. However, if we believe that there are either too few unknowns because of how much instruction is required to execute the lab, the lab would earn a 0 or 1. The convenient metric will be evaluated by how long it takes us to build an electrode set because the professor will need to build multiple. The PCBs can be ordered in bulk well before the execution of the lab, so the only preparation the professor should need to do is build the electrode sets, order the PCBs and cockroaches, and bring all the materials to the classroom. If it takes us less than 10 minutes to build one electrode set, it would earn a 4. If it takes us more than an hour to build one, it would likely earn a 0.
 
 \section{Benchtop Demonstration}
+
 \subsection{Activities}
-%Describe the activities you engaged in during the final weeks of the semester.
+\par Through the final weeks of the semester, we used KiCAD to design our PCB, as shown in our prototype design. We studied the schematics and boards of the TinyPico and the RoboRoach PCB to investigate which pins and devices we would need. We were able to craft a schematic, board, and 3D model that can be submitted to a vendor for actual printing. We submitted our design to TSD for feedback before we order and test. We also began to interface with the TinyPico to ensure that we would not have trouble coding it.
+
 \subsection{Results}
-%Present the results of your benchtop testing.
+\par Although we were unable to produce a physical board for our audience to hold and observe, we were able to produce a design and 3D model. Once we have confirmed that the design is sound, we will order the board. We realized that the TinyPico is difficult to work with, so we have begun searching for alternative microcontrollers that are I2C compatible just in case the TinyPico ends up being too difficult to work with.
 
 \bibliographystyle{IEEEtran}
 \bibliography{roboroach.bib}
